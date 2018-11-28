@@ -1,5 +1,5 @@
 {
-  "name": "taro-ui",
+  "name": "taro-ui-hello-red",
   "version": "1.5.0",
   "description": "UI KIT for Taro",
   "main": "dist/index.js",
