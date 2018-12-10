@@ -4,6 +4,8 @@
 
 该组件提供日历选择功能（包括范围选择）
 
+> 注意目前 h5 和 小程序 实现的方案不一致 可能导致效果不同 和 部分API 无法使用 具体效果请看 h5 上的展示
+
 ## 使用指南
 
 在 Taro 文件中引入组件
@@ -118,5 +120,5 @@ interface SelectDate {
 | onClickPreMonth  | 点击箭头去上一个月的时候触发 | `() => void`              | -      |
 | onClickNextMonth | 点击箭头去下一个月的时候触发 | `() => void`              | -      |
 | onDayClick       | 点击日期时候触发             | `(item: {'{ value: string }'}) => void`    | -      |
-| onDayLongClick   | 长安日期时触发               | `(item: {'{ value: string }'}) => void`    | -      |
+| onDayLongClick   | 长按日期时触发               | `(item: {'{ value: string }'}) => void`    | -      |
 | onMonthChange    | 月份改变时触发               | `(value: string) => void` | -      |
