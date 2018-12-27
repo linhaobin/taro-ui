@@ -1,6 +1,6 @@
 {
   "name": "taro-ui-hello-red",
-  "version": "1.5.2-hr.1",
+  "version": "1.5.3-hr.1",
   "description": "UI KIT for Taro",
   "main": "dist/index.js",
   "types": "./@types/index.d.ts",
