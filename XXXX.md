@@ -1,0 +1,1 @@
+- `checkbox` add `thumb` prop
