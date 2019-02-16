@@ -1,15 +1,13 @@
-/* eslint taro/custom-component-children: 0 */
 import Taro from '@tarojs/taro'
 import { View, Button } from '@tarojs/components'
-
-import AtButton from '../../../components/button/index'
-import AtModal from '../../../components/modal/index'
-import AtModalHeader from '../../../components/modal/header/index'
-import AtModalContent from '../../../components/modal/content/index'
-import AtModalAction from '../../../components/modal/action/index'
-
+import {
+  AtButton,
+  AtModal,
+  AtModalHeader,
+  AtModalContent,
+  AtModalAction,
+} from 'taro-ui'
 import DocsHeader from '../../components/doc-header'
-
 import './index.scss'
 
 export default class ModalPage extends Taro.Component {
@@ -114,7 +112,10 @@ export default class ModalPage extends Taro.Component {
         </View>
 
         {/* 基础模态框 */}
-        <AtModal isOpened={isOpened1} onClose={this.closeModal.bind(this, 1, 'Modal被关闭了')}>
+        <AtModal
+          isOpened={isOpened1}
+          onClose={this.closeModal.bind(this, 1, 'Modal被关闭了')}
+        >
           <AtModalHeader>标题</AtModalHeader>
           <AtModalContent>
             <View className='modal-content'>
@@ -128,7 +129,6 @@ export default class ModalPage extends Taro.Component {
               取消
             </Button>
             <Button
-              style='color:#6190E8'
               onClick={this.closeModal.bind(this, 1, '点击了确定')}
             >
               确定
@@ -137,12 +137,13 @@ export default class ModalPage extends Taro.Component {
         </AtModal>
 
         {/* 单个按钮 */}
-        <AtModal isOpened={isOpened2} onClose={this.closeModal.bind(this, 2, 'Modal被关闭了')}>
+        <AtModal
+          isOpened={isOpened2}
+          onClose={this.closeModal.bind(this, 2, 'Modal被关闭了')}
+        >
           <AtModalHeader>标题</AtModalHeader>
           <AtModalContent>
             <View className='modal-content'>
-              这里是正文内容，欢迎加入京东凹凸实验室
-              这里是正文内容，欢迎加入京东凹凸实验室
               这里是正文内容，欢迎加入京东凹凸实验室
             </View>
           </AtModalContent>
@@ -154,7 +155,10 @@ export default class ModalPage extends Taro.Component {
         </AtModal>
 
         {/* 无标题 */}
-        <AtModal isOpened={isOpened3} onClose={this.closeModal.bind(this, 3, 'Modal被关闭了')}>
+        <AtModal
+          isOpened={isOpened3}
+          onClose={this.closeModal.bind(this, 3, 'Modal被关闭了')}
+        >
           <AtModalContent>
             <View className='modal-content'>
               这里是正文内容，欢迎加入京东凹凸实验室
@@ -167,7 +171,6 @@ export default class ModalPage extends Taro.Component {
               取消
             </Button>
             <Button
-              style='color:#6190E8'
               onClick={this.closeModal.bind(this, 3, '点击了确定')}
             >
               确定

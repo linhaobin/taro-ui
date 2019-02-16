@@ -1,6 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index/index'
-
 import './app.scss'
 
 class App extends Component {
@@ -57,7 +56,8 @@ class App extends Component {
       'pages/form/search-bar/index',
       'pages/form/image-picker/index',
       'pages/form/range/index',
-      'pages/advanced/calendar/index'
+      'pages/advanced/calendar/index',
+      'pages/theme/index'
     ],
     window: {
       backgroundTextStyle: 'light',

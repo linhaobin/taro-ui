@@ -8,11 +8,18 @@
 Taro-UI 版本需要在 `v1.5.0` 以上，在 Taro 文件中引入组件
 
 :::demo
-
 ```js
 import { AtIndexes } from 'taro-ui'
 ```
+:::
 
+**组件依赖的样式文件（仅按需引用时需要）**
+
+:::demo
+```scss
+@import "~taro-ui/dist/style/components/indexes.scss";
+@import "~taro-ui/dist/style/components/list.scss";
+```
 :::
 
 ## 一般用法
@@ -79,7 +86,6 @@ export default class Index extends Taro.Component {
 | animation | 是否开启跳转过渡动画 | Boolean  | - | false |
 | isVibrate | 是否切换 key 的震动，只在微信小程序有效 | Boolean  | - | true |
 | isShowToast | 是否用弹框显示当前 key | Boolean  | - | true |
-| topKey | 右侧导航第一个名称 | String  | - | Top |
 | topKey | 右侧导航第一个名称 | String  | - | Top |
 | list | `[ {'{title:列表标题,key:右侧导航标题,items:[{name: 列表项内容}]}'}]` | Array  | - | - |
 
