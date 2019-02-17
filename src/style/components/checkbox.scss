@@ -62,6 +62,20 @@ $thumb-size: 56px;
     letter-spacing: 0;
   }
 
+  &__arrow {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+
+    &-icon {
+      color: $at-list-arrow-color;
+      font-size: 48px;
+    }
+    // margin-left: $spacing-h-sm;
+    // margin-right: -$spacing-h-sm;
+  }
+
   &__option {
     padding-left: $spacing-h-xl;
     @include active;

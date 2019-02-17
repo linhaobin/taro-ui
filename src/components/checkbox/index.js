@@ -32,7 +32,7 @@ export default class AtCheckbox extends AtComponent {
 
     return <View className={rootCls} style={customStyle}>
       { options.map((option, idx) => {
-        const { value, disabled, label, desc, thumb } = option
+        const { value, disabled, label, desc, thumb, arrow } = option
         const optionCls = classNames('at-checkbox__option', {
           'at-checkbox__option--disabled': disabled,
           'at-checkbox__option--selected': selectedList.includes(value)
@@ -50,6 +50,13 @@ export default class AtCheckbox extends AtComponent {
               <View className='at-checkbox__title'>{label}</View>
             </View>
             {desc && <View className='at-checkbox__desc'>{desc}</View>}
+            {arrow ? (
+              <View className='at-checkbox__arrow'>
+                <Text
+                  className={`at-icon at-checkbox__arrow-icon at-icon-chevron-${arrow}`}
+                />
+              </View>
+            ) : null}
           </View>
         </View>
       })}

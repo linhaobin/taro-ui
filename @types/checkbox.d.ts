@@ -8,6 +8,7 @@ export interface Option<T> {
   desc?: string
   disabled?: boolean
   thumb?: string
+  arrow?: string
 }
 
 export interface AtCheckboxProps<T> {
