@@ -12,6 +12,7 @@ $thumb-size: 56px;
 
   /* elements */
   &__option-wrap {
+    position: relative;
     padding: $spacing-v-lg $spacing-h-xl $spacing-v-lg 0;
   }
 
