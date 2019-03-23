@@ -28,7 +28,13 @@ class AtSearchBar extends AtComponent {
 
   handleChange = (e, ...arg) => this.props.onChange(e.target.value, ...arg)
 
-  handleClear = (...arg) => this.props.onChange('', ...arg)
+  handleClear = (...arg) => {
+    if (this.props.onClear) {
+      this.props.onClear()
+    } else {
+      this.props.onChange('', ...arg)
+    }
+  }
 
   handleConfirm = (...arg) => this.props.onConfirm(...arg)
 
@@ -58,11 +64,11 @@ class AtSearchBar extends AtComponent {
     const placeholderWrapStyle = {}
     const actionStyle = {}
     if (isFocus || (!isFocus && value)) {
-      placeholderWrapStyle.width = `${(placeholder.length + 2.5) * fontSize}px`
       actionStyle.opacity = 1
       actionStyle.marginRight = `0`
+      placeholderWrapStyle.flexGrow = 0
     } else if (!isFocus && !value) {
-      placeholderWrapStyle.width = '100%'
+      placeholderWrapStyle.flexGrow = 1
       actionStyle.opacity = 0
       actionStyle.marginRight = `-${((actionName.length + 1) * fontSize) + (fontSize / 2)}px`
     }
@@ -94,7 +100,7 @@ class AtSearchBar extends AtComponent {
               className='at-search-bar__placeholder'
               style={placeholderStyle}
             >
-              {placeholder}
+              {isFocus ? '' : placeholder}
             </Text>
           </View>
           <Input
@@ -159,7 +165,8 @@ AtSearchBar.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onConfirm: PropTypes.func,
-  onActionClick: PropTypes.func
+  onActionClick: PropTypes.func,
+  onClear: PropTypes.func
 }
 
 export default AtSearchBar

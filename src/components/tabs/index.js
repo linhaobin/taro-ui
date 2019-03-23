@@ -6,6 +6,8 @@ import { uuid, isTest } from '../../common/utils'
 import AtComponent from '../../common/component'
 
 const ENV = Taro.getEnv()
+const MIN_DISTANCE = 100
+const MAX_INTERVAL = 10
 
 export default class AtTabs extends AtComponent {
   constructor () {
@@ -41,7 +43,7 @@ export default class AtTabs extends AtComponent {
         case Taro.ENV_TYPE.WEB: {
           const index = Math.max(idx - 1, 0)
           const prevTabItem = this.tabHeaderRef.childNodes[index]
-          this.setState({
+          prevTabItem && this.setState({
             _scrollTop: prevTabItem.offsetTop,
             _scrollLeft: prevTabItem.offsetLeft
           })
@@ -83,14 +85,14 @@ export default class AtTabs extends AtComponent {
     const moveDistance = touchMove - this._touchDot
     const maxIndex = tabList.length
 
-    if (!this._isMoving && this._interval < 10) {
+    if (!this._isMoving && this._interval < MAX_INTERVAL && this._touchDot > 20) {
       // 向左滑动
-      if (current + 1 < maxIndex && moveDistance <= -40) {
+      if (current + 1 < maxIndex && moveDistance <= -MIN_DISTANCE) {
         this._isMoving = true
         this.handleClick(current + 1)
 
       // 向右滑动
-      } else if (current - 1 >= 0 && moveDistance >= 40) {
+      } else if (current - 1 >= 0 && moveDistance >= MIN_DISTANCE) {
         this._isMoving = true
         this.handleClick(current - 1)
       }
